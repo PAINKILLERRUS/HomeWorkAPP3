@@ -3,7 +3,7 @@ package ru.geekbrains.homework;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Main{
+public class Main {
     public static int countWords(ArrayList<String> list, String words) {
         return Collections.frequency(list, words);
     }
@@ -18,6 +18,19 @@ public class Main{
             }
             Map<String, Integer> Map = list.stream().collect(Collectors.toMap(e -> e, e -> 1, Integer::sum));
             Map.forEach((k, v) -> System.out.println("Слово: " + k + " встречается: " + v + " раз."));
+
+            //-----------------Задание 2
+            PhoneBook PHB = new PhoneBook();
+            PHB.add("Сергей","1234");
+            PHB.add("Иван","2345");
+            PHB.add("Олег","2346");
+            PHB.add("Артем","2375");
+            PHB.add("Юрий","8945");
+            PHB.add("Иван","0967");
+            PHB.add("Тимофей","7856");
+
+            System.out.println("Иван: " + PHB.get("Иван"));
+            System.out.println("Сергей: " + PHB.get("Сергей"));
         }
 }
 
